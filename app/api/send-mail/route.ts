@@ -49,10 +49,14 @@ export async function POST(request: Request) {
       { success: true, message: "Email sent successfully" },
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error sending email:", error);
+    const errorMessage =
+      typeof error === "object" && error !== null && "message" in error
+        ? (error as { message?: string }).message
+        : "Failed to send email";
     return NextResponse.json(
-      { success: false, error: error.message || "Failed to send email" },
+      { success: false, error: errorMessage },
       { status: 500 }
     );
   }
