@@ -34,7 +34,8 @@ export default function Portfolio() {
       } else {
         alert("Error sending email: " + (data.error || "Unknown error"));
       }
-    } catch (error) {
+    } catch (_) {
+      // Unused error variable removed
       alert("An error occurred. Please try again later.");
     } finally {
       setIsLoading(false);
@@ -44,8 +45,8 @@ export default function Portfolio() {
   const handleDownloadCV = () => {
     // Create a temporary anchor element for download
     const link = document.createElement('a');
-    link.href = '/Lewis_Muthomi_CV. 2025.pdf'; // Use URL-safe filename
-    link.download = 'Lewis_Muthomi_CV. 2025.pdf'; // Specify exact filename
+    link.href = '/Lewis_Muthomi_CV_2025.pdf'; // Fixed filename - removed space and apostrophe
+    link.download = 'Lewis_Muthomi_CV_2025.pdf'; // Specify exact filename
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -220,7 +221,7 @@ export default function Portfolio() {
       <section id="skills" className="px-8 lg:px-16 py-16">
         <h2 className="text-3xl font-bold text-center mb-4">Skills</h2>
         <p className="text-center max-w-2xl mx-auto text-gray-300 mb-4">
-          UI/UX Design – designing intuitive, user-centered interfaces that improve usability and customer engagement.
+          UI/UX Design &ndash; designing intuitive, user-centered interfaces that improve usability and customer engagement.
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <div>
