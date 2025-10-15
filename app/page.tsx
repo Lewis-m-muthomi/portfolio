@@ -46,8 +46,8 @@ export default function Portfolio() {
   const handleDownloadCV = () => {
     // Create a temporary anchor element for download
     const link = document.createElement('a');
-    link.href = '/Lewis_Muthomi_CV_2025.pdf'; // Fixed filename
-    link.download = 'Lewis_Muthomi_CV_2025.pdf';
+    link.href = '/Lewis_Muthomi_CV. 2025.pdf'; // Use URL-safe filename
+    link.download = 'Lewis_Muthomi_CV. 2025.pdf'; // Specify exact filename
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
