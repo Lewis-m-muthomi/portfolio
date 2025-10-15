@@ -34,8 +34,9 @@ export default function Portfolio() {
       } else {
         alert("Error sending email: " + (data.error || "Unknown error"));
       }
-    } catch (_) {
-      // Unused error variable removed
+    } catch {
+      // Empty catch block - ESLint will ignore this
+      /* eslint-disable-next-line no-empty */
       alert("An error occurred. Please try again later.");
     } finally {
       setIsLoading(false);
@@ -45,8 +46,8 @@ export default function Portfolio() {
   const handleDownloadCV = () => {
     // Create a temporary anchor element for download
     const link = document.createElement('a');
-    link.href = '/Lewis_Muthomi_CV_2025.pdf'; // Fixed filename - removed space and apostrophe
-    link.download = 'Lewis_Muthomi_CV_2025.pdf'; // Specify exact filename
+    link.href = '/Lewis_Muthomi_CV_2025.pdf'; // Fixed filename
+    link.download = 'Lewis_Muthomi_CV_2025.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -70,14 +71,14 @@ export default function Portfolio() {
       {/* Hero Section */}
       <section id="home" className="flex flex-col lg:flex-row items-center justify-between px-8 lg:px-16 py-16 lg:py-24">
         <div className="flex-1 text-center lg:text-left mb-12 lg:mb-0">
-          <h2 className="text-2xl mb-4">Hello, It's Me</h2>
+          <h2 className="text-2xl mb-4">Hello, It&#39;s Me</h2>
           <h1 className="text-5xl lg:text-6xl font-bold mb-4">Lewis Muthomi</h1>
           <p className="text-2xl mb-4">
-            And I'm a{" "}
+            And I&#39;m a{" "}
             <span className="text-cyan-400 font-semibold">Full Stack Developer</span>
           </p>
           <p className="text-gray-300 mb-4 max-w-lg leading-relaxed">
-            I'm a Developer and web Designer. Freelancer providing services by programming and design content needs. My
+            I&#39;m a Developer and web Designer. Freelancer providing services by programming and design content needs. My
             expertise is to create end website design, Frontend design, and many more...
           </p>
           <div className="flex justify-center lg:justify-start space-x-4 mb-4"></div>
@@ -127,13 +128,13 @@ export default function Portfolio() {
               I specialize in producing visually appealing, modern, and user-friendly websites 
               that not only look great but also deliver a seamless user experience.  
               <br /><br />
-              Over the course of my career, I've developed a strong understanding of 
+              Over the course of my career, I&#39;ve developed a strong understanding of 
               <span className="text-purple-400 font-semibold">User Experience (UX)</span> and 
               <span className="text-purple-400 font-semibold">User Interface (UI)</span> principles, 
               which allows me to design interfaces that feel intuitive, engaging, and impactful.  
               <br /><br />
               Beyond coding, I believe design is about telling a story and building a connection 
-              with users. Whether it's through crafting pixel-perfect interfaces or optimizing 
+              with users. Whether it&#39;s through crafting pixel-perfect interfaces or optimizing 
               performance for faster, smoother interactions, I take pride in every detail.  
               <br /><br />
               My goal is to help brands and businesses establish a strong digital presence 
@@ -153,7 +154,7 @@ export default function Portfolio() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 hover:bg-gray-800/70 transition-all duration-300 border border-gray-700 hover:border-cyan-400/30 group">
             <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-lg mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
               </svg>
             </div>
@@ -166,7 +167,7 @@ export default function Portfolio() {
             <div className="mt-6 pt-4 border-t border-gray-700">
               <a href="#" className="text-cyan-400 hover:text-cyan-300 font-medium flex items-center">
                 Learn more
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
               </a>
@@ -174,7 +175,7 @@ export default function Portfolio() {
           </div>
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 hover:bg-gray-800/70 transition-all duration-300 border border-gray-700 hover:border-purple-400/30 group">
             <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
               </svg>
             </div>
@@ -187,7 +188,7 @@ export default function Portfolio() {
             <div className="mt-6 pt-4 border-t border-gray-700">
               <a href="#" className="text-purple-400 hover:text-purple-300 font-medium flex items-center">
                 Learn more
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
               </a>
@@ -195,7 +196,7 @@ export default function Portfolio() {
           </div>
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 hover:bg-gray-800/70 transition-all duration-300 border border-gray-700 hover:border-pink-400/30 group">
             <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-cyan-400 rounded-lg mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
               </svg>
             </div>
@@ -208,7 +209,7 @@ export default function Portfolio() {
             <div className="mt-6 pt-4 border-t border-gray-700">
               <a href="#" className="text-pink-400 hover:text-pink-300 font-medium flex items-center">
                 Learn more
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
               </a>
@@ -385,17 +386,17 @@ export default function Portfolio() {
       <section id="contact" className="px-8 lg:px-16 py-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Contact Me</h2>
-          <h3 className="text-xl text-cyan-400 font-semibold text-center mb-4">Let's Work Together</h3>
+          <h3 className="text-xl text-cyan-400 font-semibold text-center mb-4">Let&#39;s Work Together</h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
               <p className="text-gray-300 mb-4 leading-relaxed">
-                I'm excited to hear about your project and discuss how we can work together to bring your ideas to life. 
+                I&#39;m excited to hear about your project and discuss how we can work together to bring your ideas to life. 
                 Whether you have a specific project in mind or just want to explore possibilities, feel free to reach out.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-cyan-400/10 rounded-full flex items-center justify-center mr-4">
-                    <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                     </svg>
                   </div>
@@ -406,7 +407,7 @@ export default function Portfolio() {
                 </div>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-cyan-400/10 rounded-full flex items-center justify-center mr-4">
-                    <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.518 5.517l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                     </svg>
                   </div>
@@ -508,7 +509,6 @@ export default function Portfolio() {
                     <>
                       <svg
                         className="animate-spin -ml-1 h-5 w-5 text-white"
-                        xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
                       >
